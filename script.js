@@ -11,18 +11,11 @@ function loadTitle() {
     }
 }
 
-function panic() {
-    window.location.href = "https://example.com"; // Replace with your desired URL
+function launchBlank() {
+    window.open('about:blank','_blank');
 }
 
 document.addEventListener('DOMContentLoaded', loadTitle);
-document.addEventListener('keydown', function(event) {
-    if (event.key === '/') {
-        panic();
-    }
-});
-
-document.getElementById("panicButton").addEventListener('click', panic);
 
 window.onbeforeunload = function() {
     localStorage.setItem('tabTitle', document.title);
