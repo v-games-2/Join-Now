@@ -2,14 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="dynamicTitle">Custom Title</title>
-    <script src="script.js" defer></script>
+    <title>Dynamic Title Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+    <script>
+        // Function to change the title
+        function changeTitle() {
+            var newTitle = document.getElementById('titleInput').value;
+            document.title = newTitle;
+            document.getElementById('dynamicTitle').innerText = newTitle;
+
+            // Save the new title in localStorage
+            localStorage.setItem('pageTitle', newTitle);
+        }
+
+        // Function to load the saved title
+        function loadTitle() {
+            var savedTitle = localStorage.getItem('pageTitle');
+            if (savedTitle) {
+                document.title = savedTitle;
+                document.getElementById('dynamicTitle').innerText = savedTitle;
+                document.getElementById('titleInput').value = savedTitle;
+            }
+        }
+
+        // Load the saved title when the page is loaded
+        window.onload = loadTitle;
+    </script>
 </head>
 <body>
-    <input type="text" id="titleInput" placeholder="Enter new tab title">
+
+    <h2 id="dynamicTitle">Initial Title</h2>
+    <input type="text" id="titleInput" placeholder="Enter new title">
     <button onclick="changeTitle()">Change Title</button>
-    <button onclick="launchBlank()">Launch About:Blank</button>
+
 </body>
 </html>
