@@ -3,42 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blink</title>
+    <title>Dynamic Text Change</title>
     <style>
-        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
     </style>
     <script>
-        function changeTitle() {
-            var newTitle = document.getElementById('titleInput').value;
-            document.title = newTitle;
+        function changeText() {
+            var newText = document.getElementById('textInput').value;
+            document.getElementById('dynamicText').innerText = newText;
         }
     </script>
 </head>
 <body>
 
-    <header>
-        <p class="header-title">V-Games-3</p>
-        <p class="header-subtitle">We recommend using Microsoft Edge since most things are unblocked there and our website looks better</p>
-    </header>
-
-    <!-- Input and button to change title -->
-    <div>
-        <input type="text" id="titleInput" placeholder="Enter new title">
-        <button onclick="changeTitle()">Change Title</button>
-    </div>
-
-    <div class="link-box">
-        <a href="page1.html">Page 1</a>
-    </div>
-    <div class="link-box">
-        <a href="page2.html">Page 2</a>
-    </div>
-    <div class="link-box">
-        <a href="page3.html">Page 3</a>
-    </div>
-
-    <!-- Your additional HTML content here if needed -->
+    <h2 id="dynamicText">Blink</h2>
+    <input type="text" id="textInput" placeholder="Enter new text">
+    <button onclick="changeText()">Change Text</button>
 
 </body>
 </html>
-
