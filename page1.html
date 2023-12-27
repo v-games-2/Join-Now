@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Text Change</title>
+    <title>Dynamic Title Change</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,17 +12,18 @@
         }
     </style>
     <script>
-        function changeText() {
-            var newText = document.getElementById('textInput').value;
-            document.getElementById('dynamicText').innerText = newText;
+        function changeTitle() {
+            var newTitle = document.getElementById('titleInput').value;
+            document.title = newTitle; // Change the title of the document
+            document.getElementById('dynamicTitle').innerText = newTitle; // Update the display on the page
         }
     </script>
 </head>
 <body>
 
-    <h2 id="dynamicText">Blink</h2>
-    <input type="text" id="textInput" placeholder="Enter new text">
-    <button onclick="changeText()">Change Text</button>
+    <h2 id="dynamicTitle">Initial Title</h2>
+    <input type="text" id="titleInput" placeholder="Enter new title">
+    <button onclick="changeTitle()">Change Title</button>
 
 </body>
 </html>
