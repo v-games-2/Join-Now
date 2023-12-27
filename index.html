@@ -1,51 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Simple Search Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Games-3</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
 
-        .search-container {
+        .header {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .link-box-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+        .link-box {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ddd;
+            border-radius: 10px;
             text-align: center;
         }
 
-        .search-box {
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .link-box a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
         }
 
-        .search-button {
-            padding: 10px 20px;
-            background-color: #f8f9fa;
-            border: 1px solid #f8f9fa;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .search-button:hover {
-            border: 1px solid #c6c6c6;
+        .link-box:hover {
+            background-color: #ccc;
         }
     </style>
 </head>
 <body>
 
-<div class="search-container">
-    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
-    <div>
-        <input type="text" class="search-box">
-        <button class="search-button">Google Search</button>
+    <div class="header">V-Games-3</div>
+
+    <div class="link-box-container">
+        <div class="link-box">
+            <a href="page1.html">Page 1</a>
+        </div>
+        <div class="link-box">
+            <a href="page2.html">Page 2</a>
+        </div>
+        <div class="link-box">
+            <a href="page3.html">Page 3</a>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
