@@ -1,18 +1,29 @@
 function changeTitle() {
     var newTitle = document.getElementById("titleInput").value;
     document.title = newTitle;
+    localStorage.setItem('tabTitle', newTitle);
+}
+
+function loadTitle() {
+    var savedTitle = localStorage.getItem('tabTitle');
+    if (savedTitle) {
+        document.title = savedTitle;
+    }
 }
 
 function panic() {
     window.location.href = "https://example.com"; // Replace with your desired URL
 }
 
-// Listen for keydown events on the entire document
+document.addEventListener('DOMContentLoaded', loadTitle);
 document.addEventListener('keydown', function(event) {
     if (event.key === '/') {
         panic();
     }
 });
 
-// Optional: Attach panic function to button for click as well
-document.getElementById("panicButton").onclick = panic;
+document.getElementById("panicButton").addEventListener('click', panic);
+
+window.onbeforeunload = function() {
+    localStorage.setItem('tabTitle', document.title);
+};
