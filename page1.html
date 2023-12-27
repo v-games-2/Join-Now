@@ -2,45 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Title Change</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-        }
-    </style>
+    <title>Custom Title</title>
     <script>
-        // Function to change the title
-        function changeTitle() {
-            var newTitle = document.getElementById('titleInput').value;
+        // Function to change the tab title
+        function changeTabTitle(newTitle) {
             document.title = newTitle;
-            document.getElementById('dynamicTitle').innerText = newTitle;
-
-            // Save the new title in localStorage
-            localStorage.setItem('pageTitle', newTitle);
+            localStorage.setItem('tabTitle', newTitle); // Save to localStorage
         }
 
-        // Function to load the saved title
-        function loadTitle() {
-            var savedTitle = localStorage.getItem('pageTitle');
+        // Load the saved title from localStorage
+        window.onload = function() {
+            var savedTitle = localStorage.getItem('tabTitle');
             if (savedTitle) {
                 document.title = savedTitle;
-                document.getElementById('dynamicTitle').innerText = savedTitle;
-                document.getElementById('titleInput').value = savedTitle;
             }
-        }
+        };
 
-        // Load the saved title when the page is loaded
-        window.onload = loadTitle;
+        // Panic Button functionality
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '/') { // When '/' is pressed
+                window.location.href = 'https://example.com'; // Redirect to specified URL
+            }
+        });
     </script>
 </head>
 <body>
-
-    <h2 id="dynamicTitle">Initial Title</h2>
-    <input type="text" id="titleInput" placeholder="Enter new title">
-    <button onclick="changeTitle()">Change Title</button>
-
+    <h1>Welcome to My Page</h1>
+    <p>Change the title of this tab:</p>
+    <input type="text" id="titleInput" placeholder="Enter new title here">
+    <button onclick="changeTabTitle(document.getElementById('titleInput').value)">Change Title</button>
 </body>
 </html>
