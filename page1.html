@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blink</title>
+    <style>
+        /* Your existing CSS styles */
+    </style>
+    <script>
+        function changeTitle() {
+            var newTitle = document.getElementById('titleInput').value;
+            document.title = newTitle;
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <p class="header-title">V-Games-3</p>
+        <p class="header-subtitle">We recommend using Microsoft Edge since most things are unblocked there and our website looks better</p>
+    </header>
+
+    <!-- Input and button to change title -->
+    <div>
+        <input type="text" id="titleInput" placeholder="Enter new title">
+        <button onclick="changeTitle()">Change Title</button>
+    </div>
+
+    <div class="link-box">
+        <a href="page1.html">Page 1</a>
+    </div>
+    <div class="link-box">
+        <a href="page2.html">Page 2</a>
+    </div>
+    <div class="link-box">
+        <a href="page3.html">Page 3</a>
+    </div>
+
+    <!-- Your additional HTML content here if needed -->
+
+</body>
+</html>
 
