@@ -12,11 +12,28 @@
         }
     </style>
     <script>
+        // Function to change the title
         function changeTitle() {
             var newTitle = document.getElementById('titleInput').value;
-            document.title = newTitle; // Change the title of the document
-            document.getElementById('dynamicTitle').innerText = newTitle; // Update the display on the page
+            document.title = newTitle;
+            document.getElementById('dynamicTitle').innerText = newTitle;
+
+            // Save the new title in localStorage
+            localStorage.setItem('pageTitle', newTitle);
         }
+
+        // Function to load the saved title
+        function loadTitle() {
+            var savedTitle = localStorage.getItem('pageTitle');
+            if (savedTitle) {
+                document.title = savedTitle;
+                document.getElementById('dynamicTitle').innerText = savedTitle;
+                document.getElementById('titleInput').value = savedTitle;
+            }
+        }
+
+        // Load the saved title when the page is loaded
+        window.onload = loadTitle;
     </script>
 </head>
 <body>
